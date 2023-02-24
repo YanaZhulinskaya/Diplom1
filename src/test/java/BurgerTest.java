@@ -1,5 +1,6 @@
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
@@ -11,7 +12,6 @@ import praktikum.IngredientType;
 import static org.junit.Assert.assertEquals;
 
 @RunWith(MockitoJUnitRunner.class)
-
 public class BurgerTest {
 
     @Mock
@@ -19,11 +19,8 @@ public class BurgerTest {
     @Mock
     Ingredient ingredient;
 
-    Burger burger = new Burger();
-
     @Test
     public void setBunsTest() {
-        //Arrange
         Burger burger = new Burger();
         //Act
         burger.setBuns(bun);
@@ -33,7 +30,7 @@ public class BurgerTest {
 
     @Test
     public void addIngredientTest () {
-
+        Burger burger = new Burger();
         burger.addIngredient(ingredient);
 
         int actualResult = burger.ingredients.size();
@@ -44,7 +41,7 @@ public class BurgerTest {
 
     @Test
     public void removeIngredientTest() {
-
+        Burger burger = new Burger();
         burger.addIngredient(ingredient);
         burger.removeIngredient(0);
 
@@ -56,7 +53,7 @@ public class BurgerTest {
 
     @Test
     public void moveIngredientTest() {
-
+        Burger burger = new Burger();
         burger.addIngredient(new Ingredient(IngredientType.FILLING, "dinosaur", 200));
         burger.addIngredient(new Ingredient(IngredientType.SAUCE, "chili sauce", 300));
         burger.moveIngredient(0, 1);
@@ -86,7 +83,7 @@ public class BurgerTest {
 
     @Test
     public void getReceiptReturnBurgerReceipt() {
-
+        Burger burger = new Burger();
         burger.setBuns(bun);
         burger.addIngredient(ingredient);
 
