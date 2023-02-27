@@ -13,24 +13,20 @@ import static org.junit.Assert.assertEquals;
 
 @RunWith(MockitoJUnitRunner.class)
 public class BurgerTest {
-
     @Mock
     Bun bun;
     @Mock
     Ingredient ingredient;
-
+    Burger burger = new Burger();
     @Test
     public void setBunsTest() {
-        Burger burger = new Burger();
         //Act
         burger.setBuns(bun);
         //Assert
         assertEquals(bun, burger.bun);
     }
-
     @Test
     public void addIngredientTest () {
-        Burger burger = new Burger();
         burger.addIngredient(ingredient);
 
         int actualResult = burger.ingredients.size();
@@ -38,10 +34,8 @@ public class BurgerTest {
 
         assertEquals("The burger size is not correct",expectedResult, actualResult);
     }
-
     @Test
     public void removeIngredientTest() {
-        Burger burger = new Burger();
         burger.addIngredient(ingredient);
         burger.removeIngredient(0);
 
@@ -50,10 +44,8 @@ public class BurgerTest {
 
         assertEquals("The burger size is not correct",expectedResult, actualResult);
     }
-
     @Test
     public void moveIngredientTest() {
-        Burger burger = new Burger();
         burger.addIngredient(new Ingredient(IngredientType.FILLING, "dinosaur", 200));
         burger.addIngredient(new Ingredient(IngredientType.SAUCE, "chili sauce", 300));
         burger.moveIngredient(0, 1);
@@ -67,7 +59,6 @@ public class BurgerTest {
     @Test
     public void getPriseTest() {
         //Arrange
-        Burger burger = new Burger();
         burger.setBuns(bun);
         burger.addIngredient(ingredient);
 
@@ -83,7 +74,6 @@ public class BurgerTest {
 
     @Test
     public void getReceiptReturnBurgerReceipt() {
-        Burger burger = new Burger();
         burger.setBuns(bun);
         burger.addIngredient(ingredient);
 

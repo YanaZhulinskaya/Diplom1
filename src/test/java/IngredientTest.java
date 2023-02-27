@@ -1,11 +1,11 @@
 import org.junit.Test;
+import org.mockito.Mock;
 import praktikum.Ingredient;
 import praktikum.IngredientType;
 
 import static org.junit.Assert.assertEquals;
 
 public class IngredientTest {
-
     @Test
     public void getNameReturnIngredientName() {
         Ingredient ingredient = new Ingredient(IngredientType.SAUCE, "name", 1);

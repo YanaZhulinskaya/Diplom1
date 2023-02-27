@@ -1,10 +1,10 @@
 import org.junit.Test;
+import org.mockito.Mock;
 import praktikum.Bun;
 
 import static org.junit.Assert.assertEquals;
 
 public class BunTest {
-
     @Test
     public void getNameReturnBunName() {
         Bun bun = new Bun("name", 1);
@@ -12,7 +12,6 @@ public class BunTest {
         String actualName = bun.getName();
         assertEquals ("Wrong name", expectedName, actualName);
     }
-
     @Test
     public void getPriceReturnBunPrice() {
         Bun bun = new Bun("name", 1);
