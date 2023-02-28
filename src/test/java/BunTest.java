@@ -1,22 +1,27 @@
+import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
-import org.mockito.Mock;
 import praktikum.Bun;
 
-import static org.junit.Assert.assertEquals;
-
 public class BunTest {
-    @Test
-    public void getNameReturnBunName() {
-        Bun bun = new Bun("name", 1);
-        String expectedName = "name";
-        String actualName = bun.getName();
-        assertEquals ("Wrong name", expectedName, actualName);
+    private Bun bun;
+
+    private final String NAME = "Джанго";
+
+    private final float PRICE = 3.14f;
+
+    @Before
+    public void setUp() {
+        bun = new Bun(NAME, PRICE);
     }
+
     @Test
-    public void getPriceReturnBunPrice() {
-        Bun bun = new Bun("name", 1);
-        float expectedPrice = 1;
-        float actualPrice = bun.getPrice();
-        assertEquals("Wrong price", expectedPrice, actualPrice, 0);
+    public void getNameTest() {
+        Assert.assertEquals(NAME, bun.getName());
+    }
+
+    @Test
+    public void getPriceTest() {
+        Assert.assertEquals(PRICE, bun.getPrice(), 0);
     }
 }
